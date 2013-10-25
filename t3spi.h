@@ -62,14 +62,14 @@
 #define SPI_WRITE_8(c,CTARn, PCS) \	
 	do { \
 		while ((SPI0_SR & SPI_SR_TXCTR) >= 0x00004000); \
-		SPI0_PUSHR = ((c)&0xff)   | SPI0_PUSHR_CTAS(CTARn) | SPI0_PUSHR_PCS(0x1f & PCS); \
+		SPI0_PUSHR = ((c)&0xff)   | SPI_PUSHR_CTAS(CTARn) | SPI_PUSHR_PCS(0x1f & PCS); \
 	} while(0)
 
 
 #define SPI_WRITE_16(w,CTARn, PCS) \	
 	do { \
 		while ((SPI0_SR & SPI_SR_TXCTR) >= 0x00004000); \
-		SPI0_PUSHR = ((w)&0xffff) | SPI0_PUSHR_CTAS(CTARn) | SPI0_PUSHR_PCS(0x1f & PCS); \
+		SPI0_PUSHR = ((w)&0xffff) | SPI_PUSHR_CTAS(CTARn) | SPI_PUSHR_PCS(0x1f & PCS); \
 	} while(0)
 
 
